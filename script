@@ -1,0 +1,31 @@
+def bill_calculator(bill_amount, tip_percent):
+    tip = bill_amount * tip_percent / 100
+    total_bill = bill_amount + tip
+    return total_bill
+
+while True:
+    try:
+        bill_amount = float(input("Enter the bill amount: $"))
+        break
+    except ValueError:
+        print("Please enter a number.")
+
+while True:
+    try:
+        tip_percent = float(input("Enter the tip percent: %"))
+        break
+    except ValueError:
+        print("Please enter a number.")
+
+while True:
+    try:
+        num_persons = int(input("Enter the number of persons splitting the bill: "))
+        break
+    except ValueError:
+        print("Please enter a number.")
+
+total_bill = bill_calculator(bill_amount, tip_percent)
+print("\nBill amount: $%.2f" % bill_amount)
+print("Tip percent: %.2f%%" % tip_percent)
+print("Total bill (including tip): $%.2f" % total_bill)
+print("Amount per person: $%.2f" % (total_bill / num_persons))
